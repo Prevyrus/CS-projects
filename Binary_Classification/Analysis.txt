@@ -1,0 +1,7 @@
+The clean data was much easier for the perceptron to separate. We can see in Figure 3 that it reached an rough 99% accuracy around epoch 3, and no updates were necessary after that.
+
+Now, when we refer to the noisy data, that is another story because the perceptron struggled to properly classify the dataset. In Figure 8, we can see that it reached about 0.94–0.97 accuracy overall. However, even then, it could not fully separate the data properly because it kept updating the weights up to the final epoch.
+
+In the case of Adaline, it is a very sad story. It truly struggled to properly classify the dataset, even with the clean dataset. There was a constant error that gradually decreased over 30 epochs. It performed fairly well with the clean dataset, but in the other case, with the noisy dataset, it struggled again.
+
+If we look at figure 8, it reported that Adaline achieved an accuracy of roughly 0.75, being generous, with the clean data. With the noisy data, it achieved an accuracy of roughly 0.70 over 30 epochs, which is not terrible performance, and maybe even expected, but it is concerning.
