@@ -1,136 +1,40 @@
 Regression Analysis - Homework 6
-=================================
 
-What's This Project About?
---------------------------
-This project explores different regression techniques to predict house prices using
-the Ames Housing dataset. It compares linear models, regularized regression, polynomial
-features, and non-linear models to find the best approach for price prediction.
+This project uses the Ames Housing dataset to compare different regression techniques for predicting house prices, including linear, regularized, polynomial, robust, and tree-based models.
 
-Files in This Folder
---------------------
+Files
 
-1. homework_6_regression_notebook.ipynb
-   - Jupyter notebook with step-by-step explanations
-   - Visualizations and detailed analysis
-   - Best for learning and understanding concepts
-   - Can run interactively
+homework_6_regression_notebook.ipynb - Jupyter notebook with code, explanations, and visualizations.
+Homework6.py - Standalone Python version of the analysis.
+regression_analysis_results/ - Contains generated plots, performance metrics, model comparisons, and conclusions.
 
-2. Homework6.py
-   - Standalone Python script with all analysis
-   - Run with: python Homework6.py
-   - All plots and results saved to regression_analysis_results/
+Main Tasks
 
-3. regression_analysis_results/
-   - Output folder with all generated results
-   
-   Files inside:
-   - regression_model_comparison.csv: Performance metrics for all models
-   - polynomial_model_comparison.csv: Polynomial regression comparison
-   - conclusion.txt: Summary of findings
+Preprocess the Ames Housing dataset and prepare features for modeling.
+Compare Linear Regression, Ridge, Lasso, and ElasticNet.
+Use RANSAC regression to reduce the influence of outliers.
+Compare linear, quadratic, and cubic polynomial regression.
+Evaluate Decision Tree and Random Forest regression models.
+Compare performance using R², MSE, MAE, and RMSE.
 
-What Does the Code Do?
-----------------------
+Results
 
-TASK 1: Data Preprocessing
-   - Load Ames Housing dataset (1,460 houses)
-   - Handle missing values
-   - Encode categorical variables (Central Air: Y/N → 1/0)
-   - Split: 80% training, 20% testing
-   - Standardize features using StandardScaler
+Linear and regularized regression models achieve an R² of about 0.52, while quadratic polynomial regression improves performance to about 0.65. Random Forest performs best with an R² of approximately 0.84, showing that non-linear models capture housing price patterns more effectively.
 
-TASK 2: Linear Regression Models
-   - Linear Regression: Baseline model (no regularization)
-   - Ridge Regression: L2 regularization (shrinks coefficients)
-   - Lasso Regression: L1 regularization (eliminates weak features)
-   - ElasticNet: Combines Ridge + Lasso
-   - Compare: MSE, MAE, R² scores
+Dataset
 
-TASK 3: Robust Regression
-   - RANSAC (Random Sample Consensus)
-   - Reduces impact of outliers in housing prices
-   - Useful when data has extreme values
+1,460 houses with 5 selected features: Overall Quality, Overall Condition, Gross Living Area, Central Air, and Total Basement Square Feet. The target variable is Sale Price.
 
-TASK 4: Polynomial Features
-   - Linear: Degree 1 (simple line)
-   - Quadratic: Degree 2 (curved fit)
-   - Cubic: Degree 3 (more complex curve)
-   - Prevents underfitting but risk of overfitting
+Run
 
-TASK 5: Non-Linear Models
-   - Decision Tree Regressor: Recursive feature splits
-   - Random Forest: Ensemble of many trees
-   - Often captures non-linear patterns better
+jupyter notebook homework_6_regression_notebook.ipynb
 
-Dataset Info
-------------
-- Name: Ames Housing dataset
-- Samples: 1,460 houses
-- Features used: 5
-  - Overall Quality (1-10 scale)
-  - Overall Condition (1-9 scale)
-  - Gross Living Area (sq ft)
-  - Central Air (Y/N)
-  - Total Basement Square Feet
-- Target: Sale Price ($)
+or
 
-How to Run
-----------
+python Homework6.py
 
-With Jupyter Notebook (recommended):
-  jupyter notebook homework_6_regression_notebook.ipynb
+Requirements
 
-As Python script:
-  python Homework6.py
+pip install pandas numpy matplotlib scikit-learn
 
-Requirements:
-  pip install pandas numpy matplotlib scikit-learn
-
-Key Results
------------
-
-Best Performing Models:
-  - Linear Regression R²: ~0.52
-  - Ridge Regression R²: ~0.52 (prevents overfitting)
-  - Lasso R²: ~0.52 (feature selection)
-  - Quadratic Polynomial R²: ~0.65 (better fit)
-  - Random Forest R²: ~0.84 (captures non-linearity well)
-
-Key Findings:
-  1. Linear models are simple but underfit the data
-  2. Polynomial features help capture curvature
-  3. Random Forest achieves best performance
-  4. Regularization (Ridge/Lasso) prevents overfitting
-  5. Important features: Living Area, Quality, Basement
-
-Performance Metrics Explained
------------------------------
-
-- R² Score: How well model fits data (0-1, higher is better)
-- MSE: Average squared error (smaller is better)
-- MAE: Average absolute error in dollars (smaller is better)
-- RMSE: Square root of MSE (in same units as price)
-
-Visualizations Generated
-------------------------
-
-1. gradient_descent_training_loss.png
-   - Shows how loss decreases during training
-   - Indicates good convergence
-
-2. gradient_descent_actual_vs_predicted.png
-   - Scatter plot comparing actual vs predicted prices
-   - Points close to line = good predictions
-
-3. regularized_regression_coefficients.png
-   - Compares how Ridge, Lasso, ElasticNet weight features
-   - Lasso shrinks weak features to zero
-
-4. linear_polynomial_regression.png
-   - Compares linear, quadratic, cubic fits
-   - Shows polynomial fits the data better
-
-Questions?
-----------
-Check homework_6_regression_notebook.ipynb for detailed explanations.
 GitHub: https://github.com/Prevyrus/CS-projects
