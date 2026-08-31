@@ -1,0 +1,8 @@
+
+Task 6: Conclusion
+
+The best overall Scikit-Learn model was Random Forest Regression with a test R-squared of 0.831.
+Among the regularized models, Lasso performed best with a test R-squared of 0.764.
+The regularization methods reduced the size of the coefficients. Lasso can remove a feature by setting its coefficient to zero, Ridge keeps all features but shrinks them, and ElasticNet combines both ideas.
+For polynomial regression, the Linear model had the best test R-squared (0.572).
+The polynomial terms let the model follow curved relationships that a straight line cannot capture. However, adding more terms does not always improve test performance and can lead to overfitting.
