@@ -1,5 +1,4 @@
 Model Evaluation and Hyperparameter Tuning - Homework 5
-========================================================
 
 What's This Project About?
 --------------------------
@@ -69,16 +68,16 @@ Requirements:
 What You'll Find in Results
 ---------------------------
 
-- **learning_curve.png**: The model works well, training accuracy is high and 
+- learning_curve.png: The model works well, training accuracy is high and 
   validation accuracy catches up as more data is added (good sign)
 
-- **validation_curve_pca.png**: Around 10-15 dimensions is the sweet spot.
+- validation_curve_pca.png: Around 10-15 dimensions is the sweet spot.
   Too few = bad performance, too many = no improvement
 
-- **resampling_comparison.csv**: Shows accuracy, recall, and F1-scores for 
+- resampling_comparison.csv: Shows accuracy, recall, and F1-scores for 
   different data balancing methods
 
-- **roc_curves_resampling.png**: All three strategies perform really well 
+- roc_curves_resampling.png: All three strategies perform really well 
   (AUC around 0.997-0.998, which is excellent)
 
 Key Takeaways
