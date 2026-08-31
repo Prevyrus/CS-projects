@@ -1,0 +1,19 @@
+Practicing Model Evaluation and Hyperparameter Tuning
+
+After running the model, these are the results!!!
+
+Baseline pipeline mean CV accuracy: 0.947
+Baseline pipeline test accuracy: 0.956
+Best PCA components from validation curve: 5
+GridSearchCV best CV accuracy: 0.976
+GridSearchCV test accuracy: 0.991
+GridSearchCV best parameters: {'logisticregression__C': 0.1, 'logisticregression__solver': 'lbfgs', 'pca__n_components': 10}
+RandomizedSearchCV best CV accuracy: 0.978
+RandomizedSearchCV test accuracy: 0.982
+RandomizedSearchCV best parameters: {'logisticregression__C': np.float64(0.031079675359803393), 'logisticregression__solver': 'liblinear', 'pca__n_components': 15}
+
+Answering the discussion, I was able to observed the following,
+First, the downsampling removes majority-class observations, which creates an even class distribution but also discards potentially useful data.
+Second, the upsampling keeps all majority-class observations and duplicates minority-class observations. It can improve minority detection but it could cause increase overfitting.
+Third, the test set was not resampled, so all three approaches were evaluated on the same original distribution. 
+And fourth, in this run, Original produced the highest macro F1 score (0.991).
